@@ -1,8 +1,6 @@
 import net.corda.client.rpc.CordaRPCClient;
 import net.corda.client.rpc.CordaRPCConnection;
-import net.corda.core.crypto.SecureHash;
 import net.corda.core.messaging.CordaRPCOps;
-import net.corda.core.node.services.vault.AttachmentQueryCriteria;
 import net.corda.core.utilities.NetworkHostAndPort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +22,7 @@ public class ClientRpcExample {
         final CordaRPCConnection connection = client.start(username, password);
         final CordaRPCOps cordaRPCOperations = connection.getProxy();
 
-        System.out.println(cordaRPCOperations.nodeInfo())
+        System.out.println(cordaRPCOperations.nodeInfo());
         connection.notifyServerAndClose();
     }
 }
